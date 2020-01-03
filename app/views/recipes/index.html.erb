@@ -1,0 +1,19 @@
+<h1>CookBook</h1>
+<h3>Bem-vindo ao seu livro de receitas online</h3>
+
+<p><%= link_to 'Enviar uma receita', new_recipe_path %></p>
+<p><%= link_to 'Cadastrar tipo de receita', new_recipe_type_path %></p>
+<p><%= link_to 'Cadastrar cozinha', new_cuisine_path %></p>
+
+<% @recipes.each do |recipe| %>
+  <h1><%= link_to recipe.title, recipe %></h1>
+  <ul>
+    <li>Tipo de receita: <%= recipe.recipe_type.name %></li>
+    <li>Cozinha: <%= recipe.cuisine.name %></li>
+    <li>Dificuldade: <%= recipe.difficulty %></li>
+    <li>Tempo de preparo: <%= recipe.cook_time_min %></li>
+  </ul>
+<p><%= link_to 'Deletar receita', recipe_path(recipe), method: :delete %></p>
+<% end %>
+
+  

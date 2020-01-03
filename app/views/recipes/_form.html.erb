@@ -1,0 +1,18 @@
+<h2>Receita</h2>
+<%= form_for @recipe do |f| %>
+  <p><%= f.label :title, 'Título' %></p>
+  <p><%= f.text_field :title %></p>
+  <p><%= f.label :recipe_type_id, 'Tipo da Receita' %></p>
+  <p><%= f.collection_select :recipe_type_id, @recipe_types, :id, :name %></p>
+  <p><%= f.label :cuisine_id, 'Cozinha' %></p>
+  <p><%= f.collection_select :cuisine_id, @cuisines, :id, :name %></p>
+  <p><%= f.label :difficulty, 'Dificuldade' %></p>
+  <p><%= f.text_field :difficulty %></p>
+  <p><%= f.label :cook_time, 'Tempo de Preparo' %></p>
+  <p><%= f.number_field :cook_time %></p>
+  <p><%= f.label :ingredients, 'Ingredientes' %></p>
+  <p><%= f.text_area :ingredients %></p>
+  <p><%= f.label :cook_method, 'Como Preparar' %></p>
+  <p><%= f.text_area :cook_method %></p>
+  <p><%= f.submit 'Enviar' %></p>
+<% end %>

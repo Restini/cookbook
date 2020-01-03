@@ -1,0 +1,9 @@
+<h2>Tipo de receita</h2>
+
+<%= form_for @recipe_type do |f| %>
+  <%= f.label :name, 'Nome' %>
+  <%= f.text_field :name %>
+  <%= f.submit 'Cadastrar' %>
+<% end %>
+
+<p><%= link_to 'Voltar', recipes_path %></p>
